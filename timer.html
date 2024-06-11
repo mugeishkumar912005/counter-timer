@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <h1>Timer website</h1>
+    </header>
+    <main>
+    <div id="timer">
+        <h1>00:00:00</h1>
+    </div>
+    <div class="buttons">
+        <button onclick="handlestart()">Start</button>
+        <button onclick="handlestop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+        </div>
+    </main>                                                                     
+    <script>
+    var timer;
+    var element = document.getElementById("timer").getElementsByTagName("h1")[0];
+    var sec = 0; // Initialize seconds variable to keep track of elapsed time
+    
+    function handlestart() {
+        if (!timer) { 
+            timer = setInterval(() => {
+                var hours = Math.floor(sec / 3600);
+                var minutes = Math.floor((sec % 3600) / 60);
+                var seconds = sec % 60;
+                element.innerHTML = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                sec++;
+            }, 1000);
+        }
+    }
+    
+    function handlestop() {
+        clearInterval(timer);
+        timer = null; // Reset timer variable
+    }
+    
+    function reset() {
+        clearInterval(timer);
+        timer = null; // Reset timer variable
+        sec = 0; // Reset elapsed time
+        element.innerHTML = "00:00:00";
+    }
+    </script>
+</body>
+</html>

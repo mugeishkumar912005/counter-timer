@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-image: linear-gradient(to right, blue, pink);
+}
+
+header{
+    align-items: center;
+    text-align:center;
+    margin-top:10px;
+    border:0.5px solid ;
+    background-color: black;
+}
+
+header h1{
+    margin:20px;
+    color:white;
+}
+
+#timer {
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top:150px;
+    padding: 20px; /* Adjust padding as needed */
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    border: 2px solid #333; /* Add border for visibility */
+    border-radius: 50%; /* Make it a circle */
+    background-color: #f0f0f0; /* Set background color */
+}
+
+.buttons{
+    text-align: center;
+    margin-top:40px;
+}
+.buttons button{
+    padding:10px 20px;
+    margin:10px;
+}
+
